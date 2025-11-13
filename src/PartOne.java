@@ -5,35 +5,38 @@ public class PartOne {
         int [] dataPoints = new int [100];
         Random random = new Random();
         int total = 0;
-        int min = 0;
-        int max = 0;
+        int average;
 
         for (int i = 0; i < dataPoints.length; i++){
             dataPoints[i] = random.nextInt(100) + 1;
         }
 
+        int min = dataPoints[0];
+        int max = dataPoints[0];
+
         System.out.print("These are the random numbers: \n");
         for (int k = 0; k < dataPoints.length; k++){
-            dataPoints[k] = random.nextInt(100) + 1;
             System.out.print(dataPoints[k] +" | ");
         }
 
-        for (int k = 0; k < dataPoints.length; k++){
-            dataPoints[k] = random.nextInt(100) + 1;
-            System.out.print(dataPoints[k] +" | ");
-            k >= min && k <= max);
-        }
         //Sum of all the elements in dataPoints
         for (int j = 0; j < dataPoints.length; j++){
-            total += j;
+            total += dataPoints [j];
+            //Max value
+            if (dataPoints[j] > max) {
+                max = dataPoints[j];
+            }
+            //Min value
+            if (dataPoints[j] < min) {
+                min = dataPoints[j];
+            }
         }
+        average = total / 100;
+
         System.out.println("\nTotal: " + total);
-
-
-
-
-
-
+        System.out.println("\nAverage: " + average);
+        System.out.print("\nMax value: " + max);
+        System.out.print("\nMin value: " + min);
 
     }
 
